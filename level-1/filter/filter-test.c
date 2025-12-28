@@ -28,7 +28,6 @@ void ft_filter(char *buffer, char *target)
 			k = 0;
 			while (k < str_len)
 			{
-				printf("%s\n", "hejcia");
                 write(1, "*", 1);
 				k++;
 			}
@@ -58,7 +57,7 @@ int main(int argc, char **argv)
 		buffer = realloc(result, total_read + bytes_read + 1);
 		if (!buffer)
 		{
-			perror("realloc");
+			perror("Error");
 			free(result);
 			return 1;
 		}
@@ -71,7 +70,7 @@ int main(int argc, char **argv)
 
 	if (bytes_read < 0)
 	{
-		perror("read");
+		perror("Error");
 		free(result);
 		return 1;
 	}
